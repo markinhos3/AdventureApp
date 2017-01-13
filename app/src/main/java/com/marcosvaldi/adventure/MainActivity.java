@@ -14,19 +14,36 @@ import com.marcosvaldi.adventure.Model.Item;
 import com.marcosvaldi.adventure.Model.MapGenerator;
 import com.marcosvaldi.adventure.Model.Room;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
 
-    //VBLES DE LOS BOTONES
+    //VBLES DE LOS BOTONES y SU findViewById USANDO LA NUEVA LIBRERÍA ButterKnife
+    @BindView(R.id.activity_main_scene_image)
     ImageView imgPpal;
+    @BindView(R.id.activity_main_help)
     ImageButton helpButton;
+    @BindView(R.id.activity_main_norte)
     ImageButton northButton;
+    @BindView(R.id.activity_main_sur)
     ImageButton southButton;
+    @BindView(R.id.activity_main_este)
     Button eastButton;
+    @BindView(R.id.activity_main_oeste)
     Button westButton;
+    @BindView(R.id.activity_main_inventory) // hace la función del findViewById
     Button inventoryButton;
+    @BindView(R.id.activity_main_take)
     Button takeButton;
+    @BindView(R.id.activity_main_drop)
     Button dropButton;
+    @BindView(R.id.activity_main_scene_text)
     TextView textRoom; // PASO 1
+    @BindView(R.id.activity_main_look) ImageButton lookButton; // en una Sóla Línea
+
+
+
     //VBLES DE INSTANCIA
     // AÑADO LOS OBJETOS AL INVENTARIO, creando para ello el objeto inventory ( y se hace dentro del GAME que es quien lo necesita, estaba en Main )
     Inventory inventory = new Inventory();
@@ -39,19 +56,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textRoom = (TextView) findViewById(R.id.activity_main_scene_text); //PASO 2
-        imgPpal = (ImageView) findViewById(R.id.activity_main_scene_image);
-        helpButton = (ImageButton) findViewById(R.id.activity_main_help);
-
-        northButton = (ImageButton) findViewById(R.id.activity_main_norte);
-        southButton = (ImageButton) findViewById(R.id.activity_main_sur);
-        eastButton = (Button) findViewById(R.id.activity_main_este);
-        westButton = (Button) findViewById(R.id.activity_main_oeste);
-        inventoryButton = (Button) findViewById(R.id.activity_main_inventory);
-        takeButton = (Button) findViewById(R.id.activity_main_take);
-        dropButton = (Button) findViewById(R.id.activity_main_drop);
-
-
+        //HAY QUE ACTIVAR BUTTERKNIFE
+        ButterKnife.bind(this);
 
 
         //CONCEPTO ONCLICKLISTENER: el botón necesita que le pase un Objeto tenga por narices un método onClick ( View.OnClickListener() con el método public void onClick(View view) )

@@ -5,16 +5,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class HelpActivity extends AppCompatActivity {
 
-    ImageButton exitButton;
+    @BindView(R.id.activity_help_exit_button) ImageButton exitButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
-
-        exitButton = (ImageButton) findViewById(R.id.activity_help_exit_button);
+        ButterKnife.bind(this);
 
         /*
         //PARA ENLAZAR EL BOTÓN A UNA WEB - con el método ACTION_VIEW

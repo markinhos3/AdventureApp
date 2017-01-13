@@ -6,17 +6,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class HomeActivity extends AppCompatActivity {
 
-    Button entry;
+    @BindView(R.id.activity_home_entry) Button entry;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-
-        entry = (Button) findViewById(R.id.activity_home_entry);
+        ButterKnife.bind(this);
 
         entry.setOnClickListener(new View.OnClickListener() {
             @Override
