@@ -113,7 +113,9 @@
         android:layout_alignParentRight="true"
         android:layout_below="@id/activity_main_scene_text"
         android:layout_marginTop="18dp"
-        style="@style/ActionButton_style" />
+        style="@style/ActionButton_style"
+
+        />
 
     <Button
         android:id="@+id/activity_main_take"

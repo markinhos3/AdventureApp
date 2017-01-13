@@ -3,8 +3,8 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">#66092D</item>
+        <item name="colorPrimaryDark">#66092D</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
@@ -15,5 +15,17 @@
         <item name="android:textColor">#fff</item>
         <item name="android:textStyle">italic</item>
     </style>
+
+<!-- Style para INVENTORY -->
+
+    <style name="InventoryTheme" parent="Base.AppTheme"/>
+
+    <style name="Base.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">#66092D</item>
+        <item name="colorPrimary">#DBB5C4</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorPrimary</item>
+    </style>
+
 
 </resources>

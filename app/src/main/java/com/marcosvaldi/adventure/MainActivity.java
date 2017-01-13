@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
     //necesito saber en QUÉ ROOM ESTOY
     Room currentRoom;
 
-
     //MÉTODO PARA EL On Create
     @Override
     protected void onCreate(Bundle savedInstanceState) {

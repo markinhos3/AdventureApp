@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Values para INVENTORY -->
+
+<resources>
+
+    <style name="InventoryTheme." parent="Base.AppTheme">
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+</resources>
