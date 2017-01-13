@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Adventure</string>
+    <string name="norte">N</string>
+    <string name="sur">S</string>
+    <string name="este">E</string>
+    <string name="oeste">W</string>
+    <string name="look">LOOK</string>
+    <string name="help">HELP</string>
+    <string name="drop">Drop</string>
+    <string name="take">Take</string>
+    <string name="inventory">Inventory</string>
+    <string name="chiquito">Ese hombree ese hombree me cago en tus muelas a wan. Te va a hasé pupitaa te va a hasé pupitaa a peich a wan de la pradera mamaar ese pedazo de pecador. Mamaar fistro a gramenawer qué dise usteer sexuarl a wan benemeritaar. Diodeno qué dise usteer a gramenawer te va a hasé pupitaa te va a hasé pupitaa a wan torpedo quietooor.</string>
+    <string name="boton_entrada">ARE YOU READY?</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
