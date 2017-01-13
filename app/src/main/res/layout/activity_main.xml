@@ -11,8 +11,6 @@
     android:background="#F7E688"
     tools:context="com.marcosvaldi.adventure.MainActivity">
 
-
-
     <ImageView
         android:id="@+id/activity_main_scene_image"
         android:layout_width="match_parent"
@@ -23,10 +21,10 @@
     <TextView
         android:id="@+id/activity_main_scene_text"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         tools:text="ejecutando"
         android:background="@drawable/borde_texto"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="170dp"
         android:padding="10dp"
         android:textAlignment="center"
         />

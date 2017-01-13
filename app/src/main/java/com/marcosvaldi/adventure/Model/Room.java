@@ -1,6 +1,8 @@
 package com.marcosvaldi.adventure.Model;
 
 
+import android.text.Html;
+
 import java.util.LinkedList;
 
 public class Room {
@@ -19,6 +21,22 @@ public class Room {
     private Room roomSouth;
     private Room roomEast;
     private Room roomWest;
+
+    //MÉTODO PARA COGER LA LISTA E IMPRIMIRLA EN UN STRING
+    public String getRoomItems(){
+
+        if (this.items == null){
+            return "";
+        }
+
+        String result = "";
+        for(Item item: this.items){ // recorre y va sacando un item distinto de tipo Item (es un LinkedList<Item> )
+            result = result + Html.fromHtml("<i>") + item.getName() + Html.fromHtml("</i>") + "\n";
+        }
+        return result;
+    }
+
+
 
     //como son PRIVATE necesitamos los Métodos GETTERS y SETTERS
     public String getDescription() {

@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 imgPpal.setImageResource(R.drawable.new_inv);
-                textRoom.setText("Espada\n Lanza\n Señuelo\n Papel y Lápiz");
+                textRoom.setText(inventory.print());
 
             }
         });
@@ -162,8 +162,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
+        lookButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textRoom.setText(currentRoom.getDescription() + "\n" + currentRoom.getRoomItems());
+            }
+        });
 
+    }
 
 
     //MÉTODO para inicializar el juego

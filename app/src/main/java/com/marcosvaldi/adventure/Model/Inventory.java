@@ -14,14 +14,18 @@ public class Inventory {
     }
 
     // Método para IMPRIMIR EL INVENTARIO
-    public void print(){
+    public String print(){
+
+        String result = "";
 
         // declaro una VBLE llamada item que es de TIPO Item (el tipo me viene dado cuando he definido la LISTA de TIPO Item)
         for (Item item: inventory) { // para cada item pasar según lo que haya en el inventario
 
-            System.out.println(item.getName() + " ♧ " + item.getDescription()); // ya hago uso de la vble item
+           result = result + item.getName() + "\n"; // ya hago uso de la vble item
 
         }
+
+        return result;
     }
 
     // Método para AÑADIR Items
