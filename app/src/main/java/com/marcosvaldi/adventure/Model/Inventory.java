@@ -1,9 +1,10 @@
 package com.marcosvaldi.adventure.Model;
 
 
+import java.io.Serializable;
 import java.util.LinkedList;
 
-public class Inventory {
+public class Inventory implements Serializable { //PARCELABLE: permite coger los datos en memoria y guardarlos en disco, más eficiente que SERIALIZABLE
 
     // me defino una LISTA "inventory" de TIPO ITEM
     private LinkedList<Item> inventory = new LinkedList<>(); // PRIVATE para que la lista no la vea el usuario

@@ -155,10 +155,16 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
         dropButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                Intent i = new Intent(MainActivity.this, DropItemActivity.class);
+                i.putExtra("KEY_INVENTORY",inventory); // le paso la clave/etiqueta KEY_INVENTORY para cada casilla, a la hora de sacarlo sepa de dónde sacarlo
+                // los intent no saben tratar cosas de la clase inventory: hay q darle la forma a inventory como quiere intent => la clase inventory está extendiendo de Object y eso no se lo traga el intent
+                // ARRANCA UNA ACTIVIDAD ESPERANDO UN RESULTADO
+                startActivityForResult(i, 1); // hay que pasarle un intent y un número
             }
         });
 

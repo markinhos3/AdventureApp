@@ -1,7 +1,9 @@
 package com.marcosvaldi.adventure.Model;
 
 
-public class Item {
+import java.io.Serializable;
+
+public class Item implements Serializable {
 
     // VBLES DE INSTANCIA
     private String name;
