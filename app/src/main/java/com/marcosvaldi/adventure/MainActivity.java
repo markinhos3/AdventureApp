@@ -15,6 +15,7 @@ import com.marcosvaldi.adventure.Model.Item;
 import com.marcosvaldi.adventure.Model.MapGenerator;
 import com.marcosvaldi.adventure.Model.Room;
 import com.marcosvaldi.adventure.util.Constants;
+import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -60,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
 
         //HAY QUE ACTIVAR BUTTERKNIFE
         ButterKnife.bind(this);
+        //PARA ACTIVAR PICASSO
+        Picasso.with(this).setIndicatorsEnabled(true);
+        Picasso.with(this).setLoggingEnabled(true);
 
 
         //CONCEPTO ONCLICKLISTENER: el botón necesita que le pase un Objeto tenga por narices un método onClick ( View.OnClickListener() con el método public void onClick(View view) )
@@ -193,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
         inventory.add(rubberChicken);
 
         //AQUÍ GEREO EL MAPA DEL JUEGO - llamo al método generate con la clase MapGenerator:
-        MapGenerator.generate();
+        MapGenerator.generate(this);
         currentRoom = MapGenerator.initialRoom;
 
     }
@@ -203,6 +207,12 @@ public class MainActivity extends AppCompatActivity {
 
         //write room description on screen
         textRoom.setText(currentRoom.getDescription());         //PASO 3
+
+        //PINTAR CON LA LIBRERÍA PICASSO:
+        Picasso.
+                with(this).
+                load(currentRoom.getImageUrl()).
+                into(imgPpal);
 
         if (currentRoom.getRoomNorth() != null) {
             //eso es que tiene room al norte -> que aparezca botón

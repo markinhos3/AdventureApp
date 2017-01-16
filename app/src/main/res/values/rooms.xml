@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="r_desc1">\n\t\t ☣ ROOM 1 ☣\t El edificio con el que me topo no es el que me imaginaba encontrar </string>
+    <string name="r_img1">http://www.viraldiario.com/wp-content/uploads/2015/01/casa-encantada-1.jpg</string>
+    <string name="r_desc2">\n\t\t ☣ ROOM 2 ☣\t En ese momento escuchas varios cuervos merodeando los alrededores y decides adentrárte sin mirar atrás</string>
+    <string name="r_img4">https://i.blogs.es/26654e/tss02png/650_1200.jpg</string>
+    <string name="r_desc3">\n\t\t ☣ ROOM 3 ☣\t De repente encuentras lo que menos podías imaginar dentro de un edificio cultural, un bar incrustado entre aulas con cortinas polvorientas y un camarero de otra época</string>
+    <string name="r_img3">https://i.ytimg.com/vi/WioJLdjEGPw/hqdefault.jpg</string>
+
+    </resources>

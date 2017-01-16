@@ -20,6 +20,17 @@ public class Room {
     private Room roomEast;
     private Room roomWest;
 
+    // a cada room le doy una dirección de imagen para que la baje y la muestre
+    private String imageUrl;
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     //MÉTODO PARA COGER LA LISTA E IMPRIMIRLA EN UN STRING
     public String getRoomItems(){
 

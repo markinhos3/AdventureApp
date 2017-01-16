@@ -27,6 +27,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.0.1'
     //compile 'com.android.support:support-v4:25.0.1'
     compile 'com.android.support:design:25.0.1' // aquí está el Snackbar
+    compile 'com.squareup.picasso:picasso:2.5.2' // LIBRERÍA PICASSO
     testCompile 'junit:junit:4.12'
 
     //LIBRERÍAS PEGADAS de ButterKnife
