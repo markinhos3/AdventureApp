@@ -9,7 +9,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.marcosvaldi.adventure.Model.Inventory;
+import com.marcosvaldi.adventure.Model.Room;
 import com.marcosvaldi.adventure.util.Constants;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,12 +29,24 @@ public class DropItemActivity extends AppCompatActivity {
         setContentView(R.layout.activity_drop_item);
         ButterKnife.bind(this);
 
+        // o me pasan el inventario o la lista de cosas de la room; quiero que me pasen directamente una room
 
-
+        // por aquí SACO el INVENTARIO:
         Intent i = getIntent();
         inventory = (Inventory)i.getSerializableExtra(Constants.KEY_INTENT_INVENTORY); // es peligroso el uso de estas claves
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, inventory.getItemNames()); //le paso el contexto this pq es una actividad y un DISEÑO (de una fila que aparecía pintado)
+        //POR AQUÍ SACO LA ROOM:
+        Room room = (Room)i.getSerializableExtra(Constants.KEY_INTENT_TAKE_ITEM_FROM_ROOM);
+
+        List<String> rowNames = null;
+
+        if (inventory == null){ // estoy haciendo un TAKE
+            rowNames = room.getItemNames();
+        }else { // estoy haciendo un DROP
+            rowNames = inventory.getItemNames();
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, rowNames); //le paso el contexto this pq es una actividad y un DISEÑO (de una fila que aparecía pintado)
         // que trae Adroid; y debo pasarle la lista de cadenas de texto con  los nombres de todos los items que están dentro
         itemList.setAdapter(adapter); //lo conecto al Adaptador
 

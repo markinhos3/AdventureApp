@@ -154,10 +154,16 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
         takeButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view) { // hay que hacer la clase ROOM SERIALIZABLE: public class Room implements Serializable{ ...
 
+                Intent i = new Intent(MainActivity.this, DropItemActivity.class);
+                i.putExtra(Constants.KEY_INTENT_TAKE_ITEM_FROM_ROOM, currentRoom); // le paso la clave/etiqueta KEY_INVENTORY para cada casilla, a la hora de sacarlo sepa de dónde sacarlo
+                // los intent no saben tratar cosas de la clase inventory: hay q darle la forma a inventory como quiere intent => la clase inventory está extendiendo de Object y eso no se lo traga el intent
+                // ARRANCA UNA ACTIVIDAD ESPERANDO UN RESULTADO
+                startActivityForResult(i, 2); // hay que pasarle un intent y un número que yo quiera para saber distinguir (2 para take)
             }
         });
 
@@ -169,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra(Constants.KEY_INTENT_INVENTORY, inventory); // le paso la clave/etiqueta KEY_INVENTORY para cada casilla, a la hora de sacarlo sepa de dónde sacarlo
                 // los intent no saben tratar cosas de la clase inventory: hay q darle la forma a inventory como quiere intent => la clase inventory está extendiendo de Object y eso no se lo traga el intent
                 // ARRANCA UNA ACTIVIDAD ESPERANDO UN RESULTADO
-                startActivityForResult(i, 1); // hay que pasarle un intent y un número
+                startActivityForResult(i, 1); // hay que pasarle un intent y un número que yo quiera para saber distinguir (1 para drop)
             }
         });
 
@@ -271,6 +277,24 @@ public class MainActivity extends AppCompatActivity {
 
             }
 
+        }else if (requestCode == 2){
+
+            if (resultCode == RESULT_OK) {
+
+                // sacando un itemPosition
+                int itemPosition = data.getIntExtra(Constants.KEY_INTENT_DROP_ITEM_POSITION, -1); // hay que pasarle un valor por defecto por si no se encuentra el itemPosition (-1)
+
+                Item item = currentRoom.getItems().get(itemPosition); // del inventario sacar el item de la posición que he tocado; creo el método getItem con alt+ intro Create method -> y lo crea en la clase Inventory y hay q añadir: return inventory.get(itemPosition);
+                //añade un item
+                inventory.add(item);
+                currentRoom.getItems().remove(item);
+
+                               // Para que el
+                // el Snakcbar necesita una vista para pintar -> yo la llamaba: textRoom
+                Snackbar.make(textRoom, "Taken " + item.getName(), Snackbar.LENGTH_LONG) // hace referencia a una VISTA (view)
+                        .setAction("Action", null).show(); // añade una única acción que no hace nada
+
+            }
         }
     }
 }

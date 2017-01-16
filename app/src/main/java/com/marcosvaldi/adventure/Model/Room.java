@@ -1,9 +1,12 @@
 package com.marcosvaldi.adventure.Model;
 
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
-public class Room {
+public class Room implements Serializable{
 
     //toda room va a tener una DESCRIPCIÓN
     //VBLE DE INSTANCIA
@@ -100,6 +103,19 @@ public class Room {
         this.roomWest = roomWest;
     }
 
+
+    // Me creo una LISTA DE STRINGS:
+    public List<String> getItemNames (){
+        ArrayList<String> result = new ArrayList<>();
+
+        //nombres de los elementos que están en mi inventario usando el __for mejorado__ :
+        for (Item item: items){
+
+            result.add(item.getName());
+        }
+
+        return result;
+    }
 
 
 }
