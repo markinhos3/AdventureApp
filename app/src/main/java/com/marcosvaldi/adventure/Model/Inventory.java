@@ -2,7 +2,9 @@ package com.marcosvaldi.adventure.Model;
 
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Inventory implements Serializable { //PARCELABLE: permite coger los datos en memoria y guardarlos en disco, más eficiente que SERIALIZABLE
 
@@ -12,6 +14,19 @@ public class Inventory implements Serializable { //PARCELABLE: permite coger los
     //DEFAULT CONSTRUCTOR DE INVENTARIO
     public Inventory(){
 
+    }
+
+    // Me creo una LISTA DE STRINGS:
+    public List<String> getItemNames (){
+        List<String> names = new ArrayList<>();
+
+        //nombres de los elementos que están en mi inventario usando el __for mejorado__ :
+        for (Item item: inventory){
+
+            names.add(item.getName());
+        }
+
+        return names;
     }
 
     // Método para IMPRIMIR EL INVENTARIO
@@ -36,4 +51,13 @@ public class Inventory implements Serializable { //PARCELABLE: permite coger los
     }
 
 
+    public Item getItem(int itemPosition) {
+
+        return inventory.get(itemPosition);
+    }
+
+    public void deleteItem(int itemPosition) {
+
+        inventory.remove(itemPosition);
+    }
 }
