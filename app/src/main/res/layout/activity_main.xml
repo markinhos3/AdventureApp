@@ -8,8 +8,10 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#F7E688"
-    tools:context="com.marcosvaldi.adventure.MainActivity">
+    android:background="@drawable/main_background"
+    tools:context="com.marcosvaldi.adventure.MainActivity"
+
+    >
 
     <ImageView
         android:id="@+id/activity_main_scene_image"
